@@ -1,0 +1,29 @@
+```javascript
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import ExploreScreen from './ExploreScreen';
+import DoctorCategories from './DoctorCategories';
+import DoctorList from './DoctorList';
+import DoctorDetail from './DoctorDetail';
+import DiagnosticsCategories from './DiagnosticsCategories';
+import DiagnosticsCenterList from './DiagnosticsCenterList';
+import DiagnosticsCenterDetail from './DiagnosticsCenterDetail';
+
+const Stack = createStackNavigator();
+
+function AppNavigator() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Explore" component={ExploreScreen} />
+      <Stack.Screen name="DoctorCategories" component={DoctorCategories} />
+      <Stack.Screen name="DoctorList" component={DoctorList} />
+      <Stack.Screen name="DoctorDetail" component={DoctorDetail} />
+      <Stack.Screen name="DiagnosticsCategories" component={DiagnosticsCategories} />
+      <Stack.Screen name="DiagnosticsCenterList" component={DiagnosticsCenterList} />
+      <Stack.Screen name="DiagnosticsCenterDetail" component={DiagnosticsCenterDetail} />
+    </Stack.Navigator>
+  );
+}
+
+export default AppNavigator;
+```

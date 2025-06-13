@@ -1,0 +1,54 @@
+import React from 'react';
+import { View, TextInput, TouchableOpacity, Text, StyleSheet } from 'react-native';
+
+export default function ExploreScreen({ navigation }) {
+  return (
+    <View style={styles.container}>
+      {/* Search Bar */}
+      <TextInput
+        style={styles.searchBar}
+        placeholder="Search doctors, tests, centers..."
+        placeholderTextColor="#36454F"
+      />
+
+      {/* Action Buttons */}
+      <View style={styles.buttonRow}>
+        <TouchableOpacity
+          style={styles.actionButton}
+          onPress={() => navigation.navigate('DoctorCategories')}
+        >
+          <Text style={styles.buttonText}>Find Doctors</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.actionButton}
+          onPress={() => navigation.navigate('DiagnosticsCategories')}
+        >
+          <Text style={styles.buttonText}>Diagnostic Centers</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, backgroundColor: '#FFFFF0', padding: 16 },
+  searchBar: {
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    padding: 12,
+    marginBottom: 24,
+    borderColor: '#007C91',
+    borderWidth: 1,
+    color: '#36454F',
+  },
+  buttonRow: { flexDirection: 'row', justifyContent: 'space-between' },
+  actionButton: {
+    flex: 1,
+    backgroundColor: '#FF6F61',
+    padding: 16,
+    borderRadius: 8,
+    marginHorizontal: 4,
+    alignItems: 'center',
+  },
+  buttonText: { color: '#fff', fontWeight: 'bold', fontSize: 16 },
+});
